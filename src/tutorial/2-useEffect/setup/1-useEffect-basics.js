@@ -8,10 +8,13 @@ const UseEffectBasics = () => {
     console.log('call useEffect')
     if (value > 0) {
        document.title = `Notifications(${value})`
-    } else {
-      document.title = "Hello World"
     }
-  })
+  },[value]) // runs every time [value] is updated
+
+  useEffect(()=>{
+    console.log('Hello World')
+  },[]) // runs only once on initial render []
+
   console.log('render component')
   return (
     <>
